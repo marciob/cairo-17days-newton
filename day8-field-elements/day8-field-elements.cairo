@@ -33,8 +33,28 @@ func pow(base: felt, exp: felt) -> (res: felt) {
 }
 
 func main{output_ptr: felt*}() {
+    alloc_locals; // resolution
+
     serialize_word(1 + 100);
     // Add your code here.
+
+    // resolution
+    serialize_word(1-100);
+    serialize_word(9*9);
+    //power
+    let(result)=pow(10,74);
+    serialize_word(result);
+
+    let(result2)=pow(10,75);
+    serialize_word(result2);
+    //out of range
+    let(result3)=pow(10,76);
+    serialize_word(result3);
+    //Division
+    serialize_word(12/3);
+    serialize_word(-12/3);
+    //overflow will occur
+    serialize_word(13/3);
 
     return ();
 }

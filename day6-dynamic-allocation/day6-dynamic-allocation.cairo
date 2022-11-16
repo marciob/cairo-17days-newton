@@ -31,6 +31,11 @@ func _inner_sqr_array(array: felt*, new_array: felt*, length: felt) {
 
 func sqr_array(array: felt*, length: felt) -> (new_array: felt*) {
     // Write your code here.
+    // resolution
+    alloc_locals;
+    let (local new_array) = alloc();
+    _inner_sqr_array(array=array, new_array=new_array, length=length);
+    return(new_array=new_array);
 }
 
 func main{output_ptr: felt*}() {
