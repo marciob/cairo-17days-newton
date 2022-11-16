@@ -38,6 +38,7 @@ func foo(a) -> (res: felt) {
 
 // Outputs the value 10^3 + 5^3.
 func main{output_ptr: felt*}() {
+    alloc_locals; // resolution
     let (x) = foo(10);
     let (y) = foo(5);
     serialize_word(x + y);
