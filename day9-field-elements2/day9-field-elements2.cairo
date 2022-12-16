@@ -30,3 +30,10 @@ func main{output_ptr: felt*, range_check_ptr}() {
 
     return ();
 }
+
+// unsigned_div_rem function signature looks like this:
+
+// func unsigned_div_rem{range_check_ptr}(value, div) -> (q : felt, r : felt):
+// It accepts two argument value and div. The value of div is restricted to make sure there is no overflow and it returns quotient and remainder such that:
+
+// 0 <= q < rc_bound, 0 <= r < div and value = q * div + r
